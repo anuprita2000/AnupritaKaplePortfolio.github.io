@@ -1,0 +1,1391 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>AnupritaKaplePortfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+        
+        /* 1. Force all portfolio images to be the same height */
+        .portfolio-thumb img {
+            height: 180px; 
+            object-fit: contain;
+            background-color: #ffffff;
+            width: 100%;
+            display: block;
+            padding: 5px;
+        }
+
+        /* 2. Project Title Section - Consistent Alignment */
+        .item header {
+            background: #ffffff;
+            padding: 0.8em 0.5em !important;
+        }
+
+        /* Uniform styling for section headings */
+        #experience h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 0em;
+        }
+
+        #portfolio h2 {
+            font-size: 1.6em;
+            margin-top: 0.5em;
+            margin-bottom: 0.8em;
+        }
+
+        #about h2 {
+            font-size: 1.6em;
+            margin-top: 0.5em;
+            margin-bottom: 0.8em;
+        }
+
+        .item header h3 {
+            min-height: auto; 
+            font-size: 0.9em;
+            line-height: 1.1;
+            margin: 0 !important;
+            text-align: center;
+        }
+
+        /* 3. Global Sidebar Fixes */
+        #header .image[class*="avatar"],
+        #header .image[class*="avatar"] img,
+        #header #title {
+          position: static !important;
+        }
+
+        /* 4. Navigation Fixes */
+        #nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        #nav ul li a:hover, #nav ul li a.active {
+            opacity: 1;
+            color: #49bf9d !important;
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* 5. Footer Social Icons */
+        .icons li a {
+            font-size: 1.5em !important; 
+            color: #ffffff !important;
+            transition: transform 0.2s ease, color 0.2s ease;
+            display: inline-block;
+        }
+
+        .icons li a:hover {
+            transform: scale(1.1);
+            color: #82d1bb !important;
+        }
+
+        /* 6. Portfolio Background & About Me Fixes */
+        #portfolio {
+            background-color: #ffffff !important;
+        }
+
+        #about .image.featured img {
+            max-width: 60%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 7. Modal Styling */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 9999; 
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5vh auto;
+            padding: 2em;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            position: relative;
+            color: #444;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+        }
+        .close-modal:hover { color: #000; }
+
+        .modal-content h2 { border-bottom: 2px solid #49bf9d; padding-bottom: 10px; margin-bottom: 20px; }
+        .modal-content h4 { margin-top: 1.5em; color: #49bf9d; font-weight: bold; }
+        .modal-content ul { margin-left: 1.5em; }
+
+        /* =========================
+           PROFESSIONAL EXPERIENCE
+        ========================= */
+/* =========================
+   PROFESSIONAL EXPERIENCE
+========================= */
+
+.portfolio-role-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.portfolio-role {
+    display: flex;
+    gap: 1.5em;
+    align-items: center; /* FIXED: Typo corrected from 'centre' */
+    background: #ffffff;
+    padding: 1.5em;
+    margin-bottom: 1.2em;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-role:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Container for the text (H3 and P) */
+.role-content {
+    flex: 1;            /* Takes up remaining width */
+    text-align: center; /* NEW: Forces everything inside to center */
+}
+
+.role-content h3 {
+    margin-bottom: 0.3em;
+    text-align: center; /* Explicitly center the Title */
+	font-size: 1.4em !important; /* Reduces the title size */
+}
+
+/* Styling for SAR Text */
+.role-content p {
+    margin: 0.5em 0 0 0;
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.5;
+    text-align: center; /* Explicitly center the description */
+}
+
+.sar-block strong {
+    color: #444;
+    font-weight: 600;
+}
+
+/* Company badge */
+.company-badge {
+    font-size: 0.7em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.35em 0.6em;
+    border-radius: 4px;
+    background: #e6f4f0;
+    color: #2b7d6a;
+    white-space: nowrap;
+    display: inline-block; /* Helps it respect text-align: center */
+    margin-bottom: 5px;
+}
+
+.company-badge.lt {
+    background: #f3f3f3;
+    color: #555;
+}
+
+/* Experience Images */
+.experience-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .portfolio-role {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .role-content p {
+        text-align: center;
+    }
+}
+        
+/* ======================================================
+   REPLACE YOUR PREVIOUS ADDED CSS WITH THIS FINAL BLOCK
+   ====================================================== */
+
+/* --- 1. THEME COLOR CHANGE (Teal to Warm Orange) --- */
+a { color: #ff7e67; }
+a:hover { color: #e85d45; }
+
+#nav ul li a:hover, #nav ul li a.active {
+    color: #ff7e67 !important;
+    border-right: none; 
+    background: rgba(255, 255, 255, 0.08); 
+}
+
+.icons li a:hover {
+    color: #ff7e67 !important;
+    transform: scale(1.2); 
+}
+
+/* --- 2. UNIFORM TABS (Filter Buttons) --- */
+.filter-buttons {
+    margin-bottom: 2em !important;
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    flex-wrap: wrap;
+}
+
+.filter-buttons .button {
+    border-radius: 50px !important; 
+    border: 1px solid rgba(0,0,0,0.1);
+    background: transparent;
+    color: #666 !important;
+    transition: all 0.3s ease; 
+    padding: 0.6em 1em !important;
+    min-width: 220px; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-buttons .button:hover {
+    color: #ff7e67 !important;
+    border-color: #ff7e67;
+}
+
+.filter-buttons .button.active {
+    background: #ff7e67 !important; 
+    color: #ffffff !important; 
+    border-color: #ff7e67;
+    box-shadow: 0 4px 15px rgba(255, 126, 103, 0.4); 
+    transform: translateY(-2px); 
+}
+
+/* --- 3. PROJECT CARDS (Uniform Size & Orange Effect) --- */
+.item {
+    border-radius: 8px; 
+    overflow: hidden;
+    transition: all 0.3s ease; 
+    border: 1px solid transparent !important; /* Invisible border by default */
+    background: #fff;
+    
+    /* FIX: Force Uniform Size */
+    height: 350px; /* Fixed height for all cards */
+    display: flex;
+    flex-direction: column;
+}
+
+.item:hover {
+    transform: translateY(-10px); 
+    z-index: 10;
+    
+    /* ORANGE EFFECT: Border + Orange Shadow */
+    border-color: #ff7e67 !important; 
+    box-shadow: 0 15px 30px rgba(255, 126, 103, 0.3); 
+}
+
+.portfolio-thumb img {
+    height: 180px; /* Fixed image height */
+    width: 100%;
+    object-fit: contain;
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: transform 0.5s ease;
+}
+
+.item:hover .portfolio-thumb img {
+    transform: scale(1.05); 
+}
+
+/* Center the text inside the card */
+.item header {
+    flex-grow: 1; /* Fills the rest of the 320px height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px 0 10px !important;
+}
+
+/* --- 4. BUTTONS & RESUME ICON --- */
+.button.scrolly, .button.icon, .button.resume-btn {
+    background-color: #ff7e67 !important;
+    border-radius: 50px !important;
+    color: white !important;
+    transition: transform 0.2s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.button.scrolly:hover, .button.icon:hover, .button.resume-btn:hover {
+    background-color: #e85d45 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(232, 93, 69, 0.4);
+}
+
+.button.resume-btn:before {
+    font-size: 0.7em !important; 
+    opacity: 0.9;
+    margin-right: 0.8em !important;
+}
+
+/* --- 5. UPDATED MODAL STYLING (Full Width) --- */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    /* FULL SCREEN WIDTH FIX */
+    width: 90%; /* Takes up 96% of the screen width */
+    max-width: 1000px; /* Removes the width restriction */
+    margin: 2vh auto; 
+    padding: 3em;
+    min-height: 80vh; /* Ensures it looks substantial */
+    
+    background: #fff;
+    border-radius: 12px;
+    border-top: 6px solid #ff7e67; 
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    
+    font-size: 0.75em; /* Slightly larger text for the wider screen */
+    line-height: 1.6; 
+    animation: slideDown 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.modal-content h2 {
+    border-bottom: 1px solid #eee !important; 
+    padding-bottom: 15px; 
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 2em; /* Larger Title */
+}
+
+.modal-content h4 {
+    color: #ff7e67 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1em;
+    margin-top: 2em;
+}
+
+.close-modal {
+    color: #888;
+    font-size: 3rem; /* Bigger close button */
+    top: 20px;
+    right: 30px;
+    transition: all 0.2s;
+}
+
+.close-modal:hover {
+    color: #ff7e67; 
+    transform: rotate(90deg); 
+}
+/* FORCE BOLD TEXT IN MODALS */
+.modal-content strong {
+    font-weight: 900 !important; /* Forces thickest text */
+    color: #000000 !important;   /* Forces jet black color */
+}
+/* ======================================================
+   SAFETY ALIGNMENT FIX (Paste at the very bottom)
+   ====================================================== */
+
+/* 1. Force Section Titles (Projects, About, Contact) to Center */
+#portfolio header, 
+#about header, 
+#contact header,
+#experience header {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* 2. Force Section Footers (Buttons like "Email Me") to Center */
+#portfolio footer, 
+#about footer, 
+#contact footer,
+#top footer {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    margin-top: 2em; /* Ensures proper spacing above buttons */
+}
+
+/* 3. Force Specific Section Paragraphs to Center */
+#contact p,
+#portfolio header p {
+    text-align: center !important;
+}
+
+/* 4. Ensure H2 headings inside those sections are centered */
+#portfolio h2, 
+#about h2, 
+#contact h2,
+#experience h2 {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ==================================================
+   URGENT SPACING FIXES (Paste at the very bottom)
+   ================================================== */
+
+/* 1. Cut bottom space of About Me */
+#about {
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+/* 2. Cut top space of Contact Section */
+#contact {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+}
+
+/* 3. IMPORTANT: Cut the internal padding of the container */
+#contact .container {
+    padding-top: 10px !important; /* Only 10px space at top */
+}
+
+/* 4. Remove all margins around the word "Contact" */
+#contact header {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+    margin-bottom: 15px !important; /* Small space below Contact */
+}
+
+#contact h2 {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+    line-height: 1 !important; /* Removes invisible line height space */
+}
+ 
+#contact {
+    background-color: #1e2530 !important; /* Deep Slate Background */
+    color: #ffffff !important;           /* White text */
+    border-top: 2px solid #ff7e67;       /* Optional: Nice Orange border on top */
+	padding-bottom: 4em !important; /* Adds big space at the bottom */
+}
+
+/* Make the "Contact" title white */
+#contact h2 {
+    color: #ffffff !important;
+}
+
+/* Make the paragraph text transparent white (softer on eyes) */
+#contact p {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+    	</style>
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+					<!-- Logo -->
+                    <div id="logo">
+							<span class="image avatar64"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Anuprita Kaple</h1>
+							<p>Product, Strategy, Operations </p>
+					</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+    						<ul>
+        						<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+								<li><a href="#experience" class="scrolly"><span class="icon solid fa-briefcase">Work Experience</span></a></li>
+        						<li><a href="#portfolio" id="portfolio-link" class="scrolly"><span class="icon solid fa-th">Projects</span></a></li>
+        						<li><a href="#about" id="about-link" class="scrolly"><span class="icon solid fa-user">About Me</span></a></li>
+        						<li><a href="#contact" id="contact-link" class="scrolly"><span class="icon solid fa-envelope">Contact</span></a></li>
+        						<li><a href="https://medium.com/@anuprita1009" target="_blank"><span class="icon brands fa-medium">Medium</span></a></li>
+    						</ul>
+						</nav>
+				</div>
+
+				<div class="bottom">
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/anuprita-kaple-553434201" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:ak2837@cornell.edu, anuprita1009@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				</div>
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/background.jpg'); background-size: cover; background-position: top left;" >
+						<div class="container">
+							<header>
+								<h2 class="alt">Hi! I'm <strong>Anuprita Kaple</strong> </h2>
+								<p>A global project leader driving operational excellence through cross-functional leadership and high-impact stakeholder engagement. From my mechanical engineering roots to a Cornell Masters in Engineering Management, I leverage global experience to help teams navigate the journey from initial idea to final outcome.</p>
+							</header>
+
+							<footer>
+								<!-- Existing Button -->
+    						<a href="#portfolio" class="button scrolly">View my work</a>
+    
+    						<!-- NEW RESUME BUTTON -->
+    						<!-- Replace 'resume.pdf' with the actual name of your file -->
+    						<a href="assets/resume.pdf" target="_blank" class="button icon solid fa-download resume-btn" style="margin-left: 10px;">Download Resume</a>
+							</footer>
+						</div>
+					</section>
+
+<!-- EXPERIENCE SECTION (Updated to SAR Format) -->
+<section id="experience" class="two">
+	<div class="container"> 
+    <header>
+        <h2>Work Experience</h2>
+        <p>Overview of my roles in industry, leadership, and engineering projects.</p>
+    </header>
+
+  <div class="portfolio-role-list">
+
+    <!-- FORVIA - EV Prototype -->
+    <article class="portfolio-role" onclick="openModal('modal-ceer')">
+      <div class="experience-image"><img src="images/ceer.jpg" alt="FORVIA Logo" /></div>
+      <div class="role-content">
+        <span class="company-badge">FORVIA</span>
+        <h3>CEER : EV Prototype build</h3>
+        <p class="sar-block">
+          <strong>Riyadh, Saudi Arabia<br> 
+        </p>
+      </div>
+    </article>
+
+    <!-- FORVIA - Operations -->
+    <article class="portfolio-role" onclick="openModal('modal-forvia-ops')">
+      <div class="experience-image"><img src="images/forvia.jpg" alt="FORVIA Logo" /></div>
+      <div class="role-content">
+        <span class="company-badge">FORVIA</span>
+        <h3>Forvia : Global Business Operations</h3>
+        <p class="sar-block">
+            <strong>Pune, India<br>
+            
+        </p>
+      </div>
+    </article>
+
+    <!-- FORVIA - Design -->
+    <article class="portfolio-role" onclick="openModal('modal-forvia-dd')">
+      <div class="experience-image"><img src="images/faurecia.jpg" alt="FORVIA Logo" /></div>
+      <div class="role-content">
+        <span class="company-badge">FORVIA</span>
+        <h3>Forvia : Design & Development Engineer</h3>
+        <p class="sar-block">
+            
+        </p>
+      </div>
+    </article>
+
+    <!-- L&T -->
+    <article class="portfolio-role" onclick="openModal('modal-lt')">
+      <div class="experience-image"><img src="images/L&T.jpg" alt="L&T Logo" /></div>
+      <div class="role-content">
+        <span class="company-badge lt">L&T (Larsen & Toubro)</span>
+        <h3>L&T Heavy Engineering : Program Planning & Execution Intern</h3>
+        <p class="sar-block">
+            
+        </p>
+      </div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+
+<!-- PORTFOLIO / PROJECTS SECTION -->
+						
+					<section id="portfolio" class="two">
+						<div class="container">
+							<header>
+            <h2>Projects</h2>
+            <p>Showcase of my work in product development, strategic operations, and data-driven project leadership.</p>
+            
+            <ul class="filter-buttons" style="list-style: none; padding: 0; margin: 1em 0 3em 0; text-align: center;">
+                <li style="display: inline-block; margin: 5px;">
+                    <a href="javascript:void(0)" class="button small active" onclick="filterSelection('all',this)">All</a>
+                    <div style="font-size: 0.7em; color: #888; margin-top: 5px;">Full Portfolio Overview</div>
+                </li>
+                <li style="display: inline-block; margin: 5px;">
+                    <a href="javascript:void(0)" class="button small" onclick="filterSelection('ops-sys',this)">Operations & Systems</a>
+                    <div style="font-size: 0.7em; color: #888; margin-top: 5px;">Engineering Management & Process Optimization</div>
+                </li>
+                <li style="display: inline-block; margin: 5px;">
+                    <a href="javascript:void(0)" class="button small" onclick="filterSelection('data-prod',this)">Data & Product</a>
+                    <div style="font-size: 0.7em; color: #888; margin-top: 5px;">Analytics & Strategic Insights</div>
+                </li>
+            </ul>
+        </header>
+
+        <div class="row">
+            <!-- Column 1 -->
+            <div class="col-4 col-12-mobile">
+                <article class="item filter-item data-prod">
+                    <!-- Added onclick -->
+                    <a href="javascript:void(0)" onclick="openModal('modal-marketbasket')" class="image fit portfolio-thumb"><img src="images/marketbasket.jpg" alt="" /></a>
+                    <header><h3>Market Basket Analysis using R & Python</h3></header>
+                </article>
+                <article class="item filter-item ops-sys">
+                    <!-- Added onclick -->
+                    <a href="javascript:void(0)" onclick="openModal('modal-bigred')" class="image fit portfolio-thumb"><img src="images/bigredbites.jpg" alt="" /></a>
+                    <header><h3>Program Management, Big Red Bites</h3></header>
+                </article>
+            </div>
+            
+            <!-- Column 2 -->
+            <div class="col-4 col-12-mobile">
+                <article class="item filter-item data-prod">
+                    <!-- Added onclick -->
+                    <a href="javascript:void(0)" onclick="openModal('modal-plant')" class="image fit portfolio-thumb"><img src="images/clusterprice.jpg" alt="" /></a>
+                    <header><h3>Market Entry Strategy of a Plant-based snack</h3></header>
+                </article>
+                <article class="item filter-item ops-sys">
+                    <!-- Added onclick -->
+                    <a href="javascript:void(0)" onclick="openModal('modal-crdf')" class="image fit portfolio-thumb"><img src="images/crdf1.jpg" alt="" /></a>
+                    <header><h3>Robotic Arm, CRDF</h3></header>
+                </article>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="col-4 col-12-mobile">
+                <article class="item filter-item data-prod">
+                    <!-- Added onclick -->
+                    <a href="javascript:void(0)" onclick="openModal('modal-drivebuddy')" class="image fit portfolio-thumb"><img src="images/drivebuddy.jpg" alt="" /></a>
+                    <header><h3>Business & Technology, DrivebuddyAI</h3></header>
+                </article>
+
+			<!-- NEW VIT SOCIALS CARD -->
+    <!-- Replace 'images/vit_socials.jpg' with your actual thumbnail image -->
+    			<article class="item filter-item ops-sys">
+        			<a href="javascript:void(0)" onclick="openModal('modal-vit')" class="image fit portfolio-thumb"><img src="images/vitsocials.jpg" alt="" /></a>
+        			<header><h3>VIT Socials : Prayatnam</h3></header>
+    				</article>
+				</div>
+            </div>
+        </div>
+    
+</section>
+
+							
+
+<!-- About Me -->
+					<section id="about" class="three" style="padding-bottom: 1em !important;">
+						<div class="container">
+
+							<header>
+								<h2>About Me</h2>
+							</header>
+
+							<a href="#" class="image featured"><img src="images/aboutme.jpg" alt="" /></a>
+
+							<p>I am a lifelong advocate for education and a believer in the power of teamwork. When I'm not working, you can find me on the volleyball court, playing the harmonium, exploring my thoughts through writing or out in nature.</p>
+
+						</div>
+					</section>
+
+<!-- Contact -->
+					<section id="contact" class="four" style="padding-top: 1em !important;">
+    					<div class="container">
+
+        					<header >
+								<h2>Contact</h2>
+    				
+							</header>
+
+        					<p>I’m currently based in Ithaca, New York. I’d love to hear from you regarding opportunities or professional networking.</p>
+
+        					<footer>
+            					<a href="mailto:ak2837@cornell.edu, anuprita1009@gmail.com" class="button icon solid fa-envelope"> Email Me Directly</a>
+        					</footer>
+
+    					</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+			function filterSelection(c, el) {
+                var x, i;
+                x = document.getElementsByClassName("filter-item");
+                if (c == "all") c = "";
+
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                    if (x[i].className.indexOf(c) > -1) {
+                        x[i].style.display = "block";
+                    }
+                }
+
+                var btnContainer = document.querySelector(".filter-buttons");
+                var btns = btnContainer.getElementsByClassName("button");
+                for (var j = 0; j < btns.length; j++) {
+                    btns[j].classList.remove("active");
+                }
+
+                el.classList.add("active");
+            }
+			
+			// Modal Functionality
+			function openModal(modalId) {
+                var modal = document.getElementById(modalId);
+                if(modal) {
+    			    modal.style.display = "block";
+    			    document.body.style.overflow = "hidden"; // Prevent background scrolling
+                }
+			}
+
+			function closeModal(modalId) {
+                var modal = document.getElementById(modalId);
+                if(modal) {
+    			    modal.style.display = "none";
+    			    document.body.style.overflow = "auto"; // Restore background scrolling
+                }
+			}
+
+			// Close if user clicks outside the white box
+			window.onclick = function(event) {
+    			if (event.target.className === "modal") {
+        			event.target.style.display = "none";
+        			document.body.style.overflow = "auto";
+    			}
+			}	
+
+            // Smooth Scroll for Nav Links
+            document.addEventListener("DOMContentLoaded", function () {
+              const navLinks = document.querySelectorAll("#nav a[href^='#']");
+              navLinks.forEach(link => {
+                link.addEventListener("click", function (e) {
+                  e.preventDefault();
+                  const targetId = this.getAttribute("href").substring(1);
+                  const targetSection = document.getElementById(targetId);
+                  if (targetSection) {
+                    targetSection.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start"
+                    });
+                  }
+                });
+              });
+            });
+			</script>
+
+<!-- MODALS -->
+
+<div id="modal-forvia-ops" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-forvia-ops')">&times;</span>
+
+    <h2>Global Business Operations — FORVIA</h2>
+
+    <!-- WORKSTREAM 1 -->
+    <h3 style="color: #333; margin-top: 0;">WORKSTREAM 1: Capacity Planning Project & Data Transparency</h3>
+
+    <h4>SITUATION</h4>
+    <p>As part of the Industry 4.0 goals and cost-reduction initiative, the organization lacked real-time visibility into equipment utilization across 63 global plants. Without unified data on machine performance and capacity, capital planning decisions relied on incomplete information. To address this, a comprehensive Manufacturing Execution System (MES) was required, specifically, the CAPLA (Capacity Planning) platform, to integrate global equipment performance with acquisition decisions by establishing a single source of truth for machine data across all plants and which needed accurate data to function.</p>
+
+    <h4>ACTION</h4>
+    <p>Led end-to-end digital transformation to operationalize CAPLA by synchronizing 1,800 industrial assets between SAP and Palantir. The tools that were used were: Power BI, Palantir, SAP MII, DMC.</p>
+
+    <p><strong>Action area 1: Led Data correction Foundation & Optimization:</strong></p>
+    <ul>
+        <li>Identified and categorised all 1,800 machines across 63 global plants with correct technology classification and hierarchy in the Plant system.</li>
+        <li>Streamlined 828 assets (46% of fleet) to give true performance figures in terms of right downtime, production, and cycle time data.</li>
+        <li>Implemented real-time OEE/TEEP metrics in Palantir for these equipment’s.</li>
+    </ul>
+
+    <p><strong>Three Critical Root causes identified:</strong></p>
+    <ul>
+        <li><strong>Case 1 : Wrong Cycle Times</strong> - For the machines with OEE >100% had inflated cycle times in SAP. It was identified and corrected at the Plant level to expose true utilization and prevent unnecessary equipment purchases.</li>
+        <li><strong>Case 2 : Load Rebalancing</strong> - Identified underutilized machines (TEEP <5%) on low-volume production. Shifted service parts production to higher-utilization machines, freeing capacity for future projects and transfer to other Plants.</li>
+        <li><strong>Case 3 : Right Production booking Alignment</strong> - The produced parts were booked on wrong machines across plants, these were identified and corrected, establishing accurate equipment utilization baselines globally.</li>
+    </ul>
+
+    <p><strong>Action area 2 : Training & Platform Development:</strong></p>
+    <ul>
+        <li>Delivered multi-level trainings at plant, regional (BAU), and divisional levels (China, Europe) to 100+ employees, educating about AUR/OEE/TEEP, capacity tool working and data ingestion protocols.</li>
+        <li>Closely collaborated with CAPLA development team to test, validate, and design features enhancing platform usability for end-users.</li>
+        <li>Active contributing member to the Steering committee, which met monthly, consisting of industrial directors and business unit leaders across Forvia business groups, driving strategic alignment on platform rollout and optimization priorities.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li><strong>$6M Projected Savings:</strong> Delivered CAPLA-driven cost avoidance in 2024 through eliminated capital expenditure on new assets and optimized utilization of the existing equipments.</li>
+        <li><strong>Global Equipment Visibility:</strong> All 1,800 machines tracked in real-time across 63 global plants, 46% i.e. 830 machines were corrected to report true performance data enabling accurate capacity decisions. (true performance data translated to when the data reported is between 5% to 85%).</li>
+        <li><strong>Platform Operationalized:</strong> Unified system linking equipment performance to capital planning, shifting from reactive capex spending to data-driven asset optimization.</li>
+        <li><strong>Organizational Impact:</strong> Transformed cost approach and supported Industry 4.0 efficiency mandate through scaled adoption and executive alignment.</li>
+    </ul>
+
+    <hr style="margin: 3em 0; border-top: 2px dashed #eee;">
+
+    <!-- WORKSTREAM 2 -->
+    <h3 style="color: #333;">WORKSTREAM 2: New Program Acquisitions</h3>
+
+    <h4>SITUATION</h4>
+    <p>Winning the business requires a competitive quote with accurate manufacturing costs, operational feasibility and it needs to be backed by comprehensive industrial planning and cost estimation to ensure profitability and operational viability. Parallelly, I was supporting acquisitions.</p>
+
+    <h4>ACTION</h4>
+    <ul>
+        <li><strong>AME Development:</strong> Finalization of the Acquisition Manufacturing Estimate (AME) file, the core document translating customer products into manufacturing costs and operational plans.</li>
+        <li><strong>Cost Estimation:</strong> Led detailed capex and operational cost estimates for the new program acquisition.</li>
+        <li><strong>Operational Planning:</strong> Line planning, labour planning, shift scheduling, footprint finalization, and technology selection to establish feasible production scenarios.</li>
+        <li><strong>Material Flow Design:</strong> Aligned material flow diagrams to optimize production routing and resource utilization for the new program.</li>
+        <li><strong>Quote Readiness:</strong> Ensured AME was complete and aligned with customer specifications, enabling leadership to submit a confident, competitive bid.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li>Established detailed manufacturing blueprint (material flow, labor, layout, technology) demonstrating execution capability to the customer and helped Position the organization to win new business by providing data-driven confidence on cost, timeline, and operational feasibility.</li>
+    </ul>
+
+    <div style="text-align:center; margin-top:2em;">
+      <a href="javascript:void(0)" class="button small" onclick="closeModal('modal-forvia-ops')">Close Project</a>
+    </div>
+  </div>
+</div>
+
+<div id="modal-lt" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-lt')">&times;</span>
+
+    <h2>Program Planning & Execution — Larsen & Toubro</h2>
+
+    <!-- PROBLEM 1 -->
+
+    <h3 style="color: #333; margin-top: 0;">Problem 1: Finding the Optimal Turning Points for Long-Seam Welding</h3>
+
+    <p>
+        <strong>SITUATION :</strong> At <a href="https://www.larsentoubro.com/heavy-engineering" target="_blank" style="color: #ff7e67; font-weight: bold;">L&T Heavy Engineering</a>, Tube sheets are mission-critical circular steel plates used in heat exchangers and reactors to join and support hundreds of tubes. First, the tubesheet is welded (plate sections are joined by long seam welding to form a circular assembly), then later the holes are precisely drilled. <strong>The challenge is :</strong> During long seam welding, the thermal expansion and contraction cycles create unavoidable angular distortion and warping. The final flatness and dimensional accuracy of the tubesheet directly determine whether the 1000+ precision-drilled holes will be within tolerance when drilling occurs or the tube sheet will be scrapped.
+    </p>
+    <p>Manufacturing had traditionally relied on a <em>reactive, hunt-and-correct approach</em>: weld continuously, measure distortion, apply straightening repeatedly until flatness was achieved.</p>
+    <p>This reactive approach created few critical risks:</p>
+    <ul>
+        <li><strong>Risk 1: Over-Machining & Scrap:</strong> If the tube sheet "cups" or "wings up" excessively, correcting it through rework removes material unevenly, potentially reducing wall thickness below structural requirements. Result: tube sheet rejection or scrap.</li>
+        <li><strong>Risk 2: Uncontrolled Production Delays & Cost:</strong>
+            <ul>
+                <li>Reactive corrective turns (8-10 turns "until flat" before drilling): 4-8 hours extra crane/rigging time per turn.</li>
+                <li>Thermal straightening and mechanical pressing: adds days to schedule.</li>
+                <li>Risk of catastrophic scrap: $50,000-$200,000+ per failed tubesheet + weeks of lost production.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Need :</strong> A predictive turning schedule, flipping the plate at scientifically-determined weld deposition percentages prevent distortion accumulation during welding itself.</p>
+
+    <h4>ACTION</h4>
+    <ul>
+        <li><strong>Real-Time Monitoring:</strong> Monitored in detail the fabrication of four tube sheet (8T, 8B, 9T, 9B) with varying thicknesses (30mm, 40mm) using Submerged Arc Welding (SAW) at controlled parameters (400-450A, 28-32V, 350-400 mm/min travel speed) and Applied <strong>rechambering</strong> (pre-angling sheets opposite to expected distortion direction) combined with <strong>mid-process plate flipping</strong> to leverage gravity and thermal forces.</li>
+        <li><strong>Measurement :</strong> Measured angular distortion at each welding pass using laser measurement against calibrated reference planes, capturing both magnitude and direction. Tracked weld deposition thickness at each turn point and corresponding deflection magnitude (mm).</li>
+        <li><strong>Analysis:</strong> Plotted deflection vs. weld deposition thickness for all four samples, identifying consistent patterns across different thicknesses.</li>
+    </ul>
+
+    <h4>KEY FINDINGS (Table I Analysis):</h4>
+    <ul>
+        <li><strong>Turn 1 Optimal Point:</strong> First plate flip should occur at 30-35% of total weld deposition thickness.</li>
+        <li><strong>Turn 2 Optimal Point:</strong> Second flip at 64-80% weld deposition (average 72%) Consistent timing across all four samples regardless of base plate thickness.</li>
+        <li><strong>Distortion Pattern:</strong> Maximum deflection occurred just before each turn, then decreased after flipping due to gravity assistance.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li><strong>Optimized Turning Schedule:</strong> Established science-based turning points (Turn 1 @ 30-35%, Turn 2 @ ~72%) eliminating rework of (~5000$ per sheet) and minimizing final distortion, thus saving 40 hrs of time for 01 tube sheet manufacturing.</li>
+    </ul>
+
+    <hr style="margin: 3em 0; border-top: 2px dashed #eee;">
+
+    <!-- PROBLEM 2 -->
+
+    <h3 style="color: #333;">Problem 2: Determine turns for flatness control in Electroslag Overlay Welding</h3>
+
+    <p><strong>SITUATION :</strong> After long seam welding, tubesheets require weld overlay (cladding) on inner surfaces to enhance corrosion resistance and mechanical properties for harsh operating environments. Electroslag Strip Welding (ESSW) overlay process induced secondary distortion patterns that compromised flatness tolerance. Critical flatness specifications had to be maintained throughout the overlay process to prevent downstream manufacturing issues (tube-to-tube sheet joint alignment). Manufacturing needed to identify a solid threshold for the welding thickness and turns.</p>
+
+    <h4>ACTION</h4>
+    <ul>
+        <li><strong>Experimental Setup:</strong> Conducted overlay welding on four pre-welded tubesheet samples using ESSW (Electroslag Strip Welding) at controlled parameters: 500-600A, 23-25V, 160-170 mm/min travel speed, record EST 122 flux.</li>
+        <li><strong>Coverage-Based Monitoring:</strong> Tracked flatness as cumulative area coverage progressed from 0% to 100% (50% per side = 100% total coverage) and Recorded flatness variation (in mm) using laser measurement, against cumulative coverage percentage (0%, 30%, 45%, 60%, 75%, 95%, 100%).</li>
+        <li><strong>Analysis:</strong> Plotted cumulative coverage % vs. flatness distortion, identifying critical control zones and distortion thresholds.</li>
+    </ul>
+
+    <h4>KEY FINDINGS (Flatness Analysis):</h4>
+    <ul>
+        <li><strong>Phase 1 (0-45% coverage):</strong> Flatness varied between -45mm to +25mm (wide tolerance zone).</li>
+        <li><strong>Phase 2 (45-75% coverage):</strong> Distortion pattern stabilized with max variation of ±40mm.</li>
+        <li><strong>Phase 3 (75-100% coverage):</strong> Distortion converged toward final flatness of +9mm (controlled zone).</li>
+        <li><strong>Optimal Zones Identified:</strong> Clear patterns showing when to apply tighter control vs. when relaxed tolerance acceptable.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li><strong>Process Optimization & Flatness Strategy:</strong> Provided manufacturing teams with specific flatness checkpoints, preventing costly, excessive rework during final stages.</li>
+        <li><strong>Production Framework:</strong> Enabled real-time process adjustment, if flatness exceeds limits at specific coverage %, corrective welding sequence or parameter adjustment can be applied immediately.
+            <ul>
+                <li>While covering 0% to 45% of cumulative area of the plate by overlay welding- keep flatness limit as 40mm. <em>(relaxed tolerance during initial overlay)</em>. <br><em>(If you reach the 45% area coverage mark and your plate has warped more than 40mm, you must stop and take corrective action such as adjusting the welding sequence, using stronger restraints, or applying counter-heat before continuing. If you continue, the final part may be so distorted that it cannot be machined down to the final required dimensions.)</em></li>
+                <li>For area 45% to 75% keep flatness limit as 25mm (moderate control during mid-phase).</li>
+                <li>For the last 25% i.e while covering area from 75% to 100% keep flatness strict.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p><strong>Summary of what we saved:</strong></p>
+    <ul>
+        <li>Scrap Risk which can cost $50,000-$200,000 per failed tube sheet, weeks of production loss.</li>
+        <li>Costly rework of around 5000$ per sheet and material loss.</li>
+        <li>Reducing material below safety minimums, extra crane operations: 4-8 hours per tube sheet in unnecessary handling.</li>
+        <li>Rework Labor: Dozens of man-hours in corrective machining and pressing per reactor.</li>
+    </ul>
+
+    <hr style="margin: 3em 0; border-top: 2px dashed #eee;">
+
+    <!-- PROBLEM 3 -->
+
+    <h3 style="color: #333;">Problem 3: Roller Design for the movement of Hydraulic Jack</h3>
+
+    <p><strong>SITUATION :</strong> During pressure vessel fabrication at L&T Heavy Engineering, large assemblies (150T+) required precise positioning and movement within the workshop. Standard overhead cranes could lift the pressure vessel, but positioning the hydraulic jack below it presented a critical constraint. Because the pressure vessel was lifted by the overhead crane, it blocked access to the hydraulic jack by another crane. A custom roller solution was needed that could support the full weight of the hydraulic jack to enable smooth lateral displacement to position correctly for the pressure vessel to be placed on it, problem requiring structural design under load.</p>
+
+    <h4>ACTION</h4>
+    <ul>
+        <li><strong>Problem Analysis:</strong> Identified the constraint : overhead crane unable to access the hydraulic jack due to the vessel that is held in air by another over-head crane.</li>
+        <li><strong>Design Approach:</strong> Applied shaft design theory (bending moment and shear stress analysis) to determine roller diameter capable of sustaining 8-ton point loads, Uniform distributed load, across a 700mm span.</li>
+        <li><strong>Calculation & Validation:</strong> Computed bending moments at critical points (A, B, C, D) along the roller span. Applied maximum bending stress theory (0.66Fy) to determine required diameter: 50mm solid shaft. Cross-verified using shear stress theory (Sys = 0.577Syt) yielding 41.6mm diameter. Selected 50mm diameter to ensure structural safety margin under load.</li>
+        <li><strong>Design Output:</strong> Provided detailed dimensional specifications (700mm span, 50mm diameter) for manufacturing and attachment to the hydraulic jack.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li><strong>Engineered Solution:</strong> Delivered roller design capable of supporting the uniform distributed load of 8T of the hydraulic jack while enabling its longitudinal movement within confined workspace. Thus Enabled safe movement of the hydraulic jacks in congested work areas, improving efficiency and worker safety in the workshop.</li>
+    </ul>
+
+    <!-- IMAGE PLACEHOLDER FOR PROBLEM 3 -->
+    <!-- Replace 'images/lt-roller.jpg' with your actual image file name -->
+    <img src="images/hydraulicjack.jpg" alt="L&T Roller Design" style="width: 50%; display: block; margin: 2em auto; height: auto; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+    <hr style="margin: 3em 0; border-top: 2px dashed #eee;">
+
+    <h3 style="color: #333;">OVERALL INTERNSHIP IMPACT</h3>
+    <p>Delivered a transformational manufacturing framework for pressure vessel tube sheet production at L&T Heavy Engineering, shifting from reactive, costly post-weld correction to predictive, in-process distortion control. Demonstrated ability to solve real-world production constraints through applied physics and systematic problem-solving.</p>
+
+    <div style="text-align:center; margin-top:2em;">
+      <a href="javascript:void(0)" class="button small" onclick="closeModal('modal-lt')">Close Project</a>
+    </div>
+  </div>
+</div>
+
+<div id="modal-ceer" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('modal-ceer')">&times;</span>
+        
+        <h2>CEER EV Prototype Delivery: Phase 1 Execution</h2>
+        
+        <h4>SITUATION</h4>
+        <p>
+            <a href="https://ceermotors.com/" target="_blank" style="color: #ff7e67; font-weight: bold;">CEER</a>, Saudi Arabia's first homegrown EV brand, required 63 complete prototype vehicles assembled at their Riyadh facility for Phase 1 testing within 80 days. Forvia was the official interior parts supplier (Instrument Panel, Centre Console, Door Panels) feeding a Just-In-Time production line, a zero-buffer environment where delays directly halt vehicle assembly. The execution complexity spanned multiple geographies (China manufacturing and supply chain, Riyadh production), $2M active inventory, and shared component dependencies with competing on-site suppliers, requiring orchestrated supply chain management.
+        </p>
+
+        <h4>ACTION</h4>
+        <ul>
+            <li><strong>Program Leadership:</strong> Co-led the prototype execution team, establishing governance and operational strategy across geographically dispersed teams and suppliers. Tools used were MS Office suite.</li>
+            <li><strong>Inventory Optimization:</strong> Managed ~$2M inventory present in the Forvia premises in Riyadh, using FIFO discipline, demand forecasting, and daily reconciliation to eliminate wastage and prevent supply-demand misalignment.</li>
+            <li><strong>Multi-Supplier Coordination:</strong> Coordinated directly with CEER and on-site suppliers to manage shared component inventory (e.g., sensors needed across IP and in bumper), resolving competing demands and aligning supply allocation.</li>
+            <li><strong>Operational Tracking:</strong> Implemented daily tracking system capturing component consumption, parts issuance, and delivery documentation, creating accountability and real-time visibility for schedule risks.</li>
+            <li><strong>Risk Management:</strong> Established daily operational reviews with stakeholders to surface bottlenecks, escalate risks, and drive swift resolution in a zero-delay environment.</li>
+        </ul>
+
+        <h4>RESULT</h4>
+        <ul>
+            <li><strong>On-Time Delivery:</strong> 63 complete cockpits delivered in 80 days with zero delays, enabling Phase 1 testing launch as scheduled.</li>
+            <li><strong>Inventory Management:</strong> Maintained optimal stock levels with zero wastage and 100% parts availability across multi-supplier coordination.</li>
+            <li><strong>5-Star Client Satisfaction:</strong> Sustained stakeholder confidence and positive feedback from CEER leadership despite extreme time and complexity constraints.</li>
+        </ul>
+
+        <!-- IMAGE AT THE BOTTOM -->
+        <!-- CONTROL SIZE HERE: changed width to 60% -->
+        <img src="images/ceerresult.jpg" alt="Project Results" style="width: 40%; display: block; margin: 2em auto; height: auto; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+        <div style="margin-top: 2em; text-align: center;">
+            <a href="javascript:void(0)" onclick="closeModal('modal-ceer')" class="button small">Close Project</a>
+        </div>
+    </div>
+</div>
+
+<!-- Placeholder Modal for Design & Development if needed later -->
+<div id="modal-forvia-dd" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-forvia-dd')">&times;</span>
+
+    <h2>Design & Development — FORVIA</h2>
+
+    <!-- WORKSTREAM 1 -->
+    <h3 style="color: #333; margin-top: 0;">WORKSTREAM 1: Citron Vehicle Launch</h3>
+
+    <h4>SITUATION</h4>
+    <p>Citron vehicle lift-off (2022-2023) was critical for Stellantis. Interior component design required flawless execution on a compressed timeline; any delays would jeopardize the manufacturing schedule.</p>
+
+    <h4>ACTION</h4>
+    <ul>
+        <li>Contributed to end-to-end design and delivery of Instrument Panel subsystems (ducts, trim covers) in CATIA V5R26.</li>
+        <li>Implemented KANBAN methodology to streamline design iterations and maintain velocity without compromising quality.</li>
+        <li>Coordinated with Stellantis and Renault engineering teams to align designs with OEM requirements and manufacturing constraints.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li>Delivered all IP subsystems with zero delays, enabling launch to proceed on schedule.</li>
+        <li>All components validated and approved for trial production, eliminating rework.</li>
+    </ul>
+
+    <hr style="margin: 3em 0; border-top: 2px dashed #eee;">
+
+    <!-- WORKSTREAM 2 -->
+    <h3 style="color: #333;">WORKSTREAM 2: ECR Management</h3>
+
+    <h4>SITUATION</h4>
+    <p>Engineering Change Requests (ECRs) are continuously triggered by customer feedback, field defects, manufacturing bottlenecks, and material nonconformances. Each requires rapid assessment, design updates, and production validation within tight timelines to prevent field failures. Managing this high-velocity change workflow demands disciplined execution.</p>
+
+    <h4>ACTION</h4>
+    <ul>
+        <li>Processed and delivered ECRs across 2D drawings and 3D CAD models, validating all modifications for production readiness.</li>
+        <li>Coordinated with customer engineering teams to ensure alignment with OEM specifications and constraints.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li>Delivered all ECRs within required timelines, preventing field failures and manufacturing delays and achieved zero rework in the final production stage, through rigorous validation and readiness checks.</li>
+    </ul>
+
+    <div style="text-align:center; margin-top:2em;">
+      <a href="javascript:void(0)" class="button small" onclick="closeModal('modal-forvia-dd')">Close Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- =======================
+     PROJECT MODALS
+     ======================= -->
+
+<!-- 1. Market Basket -->
+<div id="modal-marketbasket" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-marketbasket')">&times;</span>
+    
+    <h2>Market Basket Analysis - Customer Segmentation via K-Means Clustering</h2>
+    
+    <!-- UPDATED IMAGE: Square (350x350) and Centered -->
+    <img src="images/marketbasketcluster.jpg" alt="Analysis Graph" style="width: 40%; display: block; margin: 2em auto; height: auto; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    
+	<h4>SITUATION</h4>
+    <p>A retail transaction dataset with 698 customers across 3,846 unique products required analysis to uncover customer purchasing patterns and market basket insights. The goal was to segment customers based on their buying behavior to inform merchandising strategies, product bundling opportunities, and targeted cross-selling campaigns.</p>
+
+    <h4>ACTION</h4>
+    <p>As a team, we applied three complementary market basket analysis algorithms to the retail transaction dataset:</p>
+    <ul>
+        <li><strong>K-Means Clustering:</strong> I performed K-means clustering with PCA to segment customers by purchase behaviour, applying the elbow method to determine optimal clusters (k=2) and visualizing results across principal components.</li>
+        <li><strong>ECLAT Analysis:</strong> Concurrently, the team executed ECLAT analysis to identify frequent item sets and co-purchase relationships at 2% support threshold.</li>
+        <li><strong>FP-Growth Algorithm:</strong> Implemented FP-Growth algorithm (1% support, 30% confidence, lift ≥1.2) to discover 968 frequent item sets and 568 association rules, completing execution in 8.93 seconds.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li><strong>Customer Segmentation:</strong> The multi-method analysis uncovered distinct market basket patterns across 387,985 cleaned transactions. K-means clustering identified two customer segments: 696 regular customers with consistent moderate purchase patterns and 2 outlier customers with significantly higher volumes.</li>
+        <li><strong>Co-Purchase Associations:</strong> FP-Growth revealed top co-purchase associations with lift values exceeding 56, including coordinated dinnerware sets (Regency Milk Jug Pink → Sugar Bowl Green, lift 56.59) and themed product bundles, indicating strong cross-selling opportunities.</li>
+        <li><strong>High-Frequency Insights:</strong> ECLAT analysis confirmed focused purchasing behavior around high-frequency SKUs, with the top 3 items appearing in 8-11% of transactions. These insights enable targeted bundling strategies, optimized product placement, and data-driven merchandising recommendations across different customer segments.</li>
+    </ul>
+
+    <h4>KEY TECHNOLOGIES</h4>
+    <p>R (K-cluster, apriori algorithm), Python, Data Visualization</p>
+
+    <hr style="margin: 2em 0; border-top: 2px dashed #eee;">
+
+    <div style="text-align:center;">
+        <!-- PDF BUTTON -->
+        <!-- Ensure your file is named 'MarketBasket_Report.pdf' and is inside the 'assets' folder -->
+        <a href="assets/marketbasketreport.pdf" target="_blank" class="button icon solid fa-file-pdf">Learn more here (View Report)</a>
+        
+        <br><br>
+        
+        <!-- CLOSE BUTTON (Now matches your other buttons) -->
+        <a href="javascript:void(0)" class="button small" onclick="closeModal('modal-marketbasket')">Close Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Big Red Bites -->
+<div id="modal-bigred" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-bigred')">&times;</span>
+    
+    <h2>Big Red Bites – Strategic Planning & Operational Roadmap</h2>
+    
+    <!-- IMAGE: Kept as requested (40% width, centered) -->
+    <img src="images/bigredbites.jpg" alt="App Interface" style="width: 40%; display: block; margin: 2em auto; height: auto; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    
+    <h4>SITUATION</h4>
+    <p>Cornell students lacked affordable late-night dining options, while dining halls faced significant food waste from unserved surplus. Our team was tasked with conceptualizing a solution and delivering a comprehensive, execution-ready project plan for <strong>Big Red Bites</strong>, a mobile platform to monetize surplus food while driving campus sustainability.</p>
+
+    <h4>TASK</h4>
+    <p>As the <strong>Project Manager</strong> for a 14-member cross-functional team (including 4 distance learners), I was responsible for leading the end-to-end strategic planning phase. This included defining the technical architecture, financial viability, and a 7-month phased execution roadmap to pitch to stakeholders.</p>
+
+    <h4>ACTION</h4>
+    <p>I established a structured planning environment to move the project from a concept to a "shovel-ready" state:</p>
+    <ul>
+        <li><strong>Project Governance & Remote Integration:</strong> Implemented a <strong>Notion-based Kanban system</strong> to synchronize 14 hybrid team members, ensuring work-stream alignment across Research, Design, and Financials.</li>
+        <li><strong>Phased Roadmap Development:</strong> Architected a 7-month GANTT execution plan, meticulously detailing milestones from initial stakeholder interviews to post-launch sustainability audits.</li>
+        <li><strong>Technical Prototyping:</strong> Personally developed the UI/UX prototype using <strong>Replit</strong> to define the user journey, incorporating critical filters for dietary restrictions and a time-based tiered discounting engine.</li>
+        <li><strong>Financial & Resource Modelling:</strong> Co-Led the creation of a $106,506 budget and resource plan, identifying specific needs for API development, legal compliance, and student ambassador programs.</li>
+        <li><strong>Creative Direction:</strong> Supported Direction of the <strong>winning pitch video</strong>, translating complex technical and financial planning into a compelling narrative for the competition judges.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li><strong>Award-Winning Pitch:</strong> Secured <strong>3rd Place</strong> in the Project Video Competition among all teams in the Engineering Management program.</li>
+        <li><strong>High-Fidelity Planning:</strong> Delivered a comprehensive project deck featuring a full Cost Breakdown Structure (CBS)and technical requirements ready for immediate hand-off to development.</li>
+        <li><strong>Leadership Excellence:</strong> Successfully maintained 100% team engagement in a hybrid setting by fostering a "human-centered" culture through structured interpersonal engagement and clear role accountability.</li>
+    </ul>
+
+    <div style="text-align:center; margin-top: 2em;">
+        <!-- CLOSE BUTTON ONLY -->
+        <a href="javascript:void(0)" class="button small" onclick="closeModal('modal-bigred')">Close Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Plant Based Snack -->
+<div id="modal-plant" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-plant')">&times;</span>
+    
+    <h2>Strategic Market Entry for a Plant-Based Snack Bar</h2>
+    
+    <!-- IMAGE: Styled exactly like Market Basket (40% width, centered, shadow) -->
+    <img src="images/clusterprice.jpg" alt="Cluster Analysis" style="width: 40%; display: block; margin: 2em auto; height: auto; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    
+    <h4>SITUATION</h4>
+    <p>For the course of Decision Framing & Analytics, our team constructed a problem statement in which a mid-sized FMCG firm sought to enter the competitive U.S. plant-based protein bar market, a sector valued approx. at <strong>$1.05 billion</strong> and growing at a <strong>17.8% CAGR</strong>. This market in reality featured a high failure rate for new entrants due to saturated competition and complex consumer preferences regarding taste and "clean label" claims.</p>
+
+    <h4>TASK</h4>
+    <p>Our team was tasked with delivering a robust, data-led market entry strategy. The objective was to define a product-market fit, establish a pricing architecture, and select the optimal distribution channel through rigorous decision analytics.</p>
+
+    <h4>ACTION</h4>
+    <p>The team integrated distinct analytical frameworks to drive the recommendation:</p>
+    <ul>
+        <li><strong>Pricing Segmentation:</strong> I was responsible for the K-means clustering and Principal Component Analysis (PCA). Standardized competitive features and utilized the Elbow Method to identify three distinct price tiers (Budget, Mid-range, and Premium). Analysis proved that Cluster 3 (Premium) was the optimal target, supporting a price anchor of <strong>$2.63–$2.75</strong> to signal high-quality organic ingredients.</li>
+        <li><strong>Risk Factor Modelling:</strong> We identified six critical risk factors—ranging from Consumer Acceptance to Supply Chain Uncertainty—and quantified their impact on commercial success.</li>
+        <li><strong>Decision Tree & EMV Analysis:</strong> We architected an Expected Monetary Value (EMV) decision tree to evaluate three entry modes: National Launch, Regional Pilot, and Online-First.
+            <ul>
+                <li>We mapped 24 risk-weighted scenarios to terminal outcomes (Strong, Moderate, Underperformance, or Exit).</li>
+            </ul>
+        </li>
+        <li><strong>Multi-Attribute Utility Theory (MAUT):</strong> To account for risk-aversion, we applied a weighted scoring model. We validated this through Dirichlet-based robustness analysis, simulating 10,000 weight variations to ensure our recommendation was stable under uncertainty.</li>
+        <li><strong>Geospatial Hotspot Analysis:</strong> Constructed a synthetic transaction dataset to visualize Conversion Rate and Marketing ROI across eight states. This helped identify specific "hotspots" where digital activation would be most effective.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li><strong>Strategic Recommendation:</strong> Our multi-layered analysis converged on the <strong>Regional Pilot (A2)</strong> as the superior entry strategy, offering the highest EMV of <strong>$42.53M</strong> and a risk-averse utility of <strong>3.90</strong>.</li>
+        <li><strong>Statistical Stability:</strong> The Dirichlet simulations showed our preferred strategy outperformed alternatives in <strong>99.94%</strong> of cases, providing the client with high confidence in the roadmap.</li>
+        <li><strong>Positioning Clarity:</strong> We successfully identified a "white space" between extreme fitness bars and premium organic snacks for a 15-20g protein bar under 200 calories.</li>
+        <li><strong>Operational Readiness:</strong> We delivered an execution-ready plan that prioritized high-ROI states while limiting downside risk through staged scaling.</li>
+    </ul>
+
+    <hr style="margin: 2em 0; border-top: 2px dashed #eee;">
+
+    <div style="text-align:center;">
+        <!-- PDF BUTTON -->
+        <!-- Ensure your file is named 'MarketEntry_Report.pdf' inside the 'assets' folder -->
+        <a href="assets/marketstrategy.pdf" target="_blank" class="button icon solid fa-file-pdf">Learn more here (View Report)</a>
+        
+        <br><br>
+        
+        <!-- CLOSE BUTTON -->
+        <a href="javascript:void(0)" class="button small" onclick="closeModal('modal-plant')">Close Project</a>
+    </div>
+  </div>
+</div>
+<!-- 4. Robotic Arm -->
+<div id="modal-crdf" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-crdf')">&times;</span>
+    
+    <h2>CRDF - 6 Degrees of Freedom Robotic Arm Development</h2>
+    
+    <!-- TOP IMAGE -->
+    <!-- TOP IMAGE (Reduced size to 25%) -->
+<img src="images/crdfrobot.jpg" alt="Robotic Arm Design" style="width: 25%; display: block; margin: 2em auto; height: auto; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <h4>SITUATION</h4>
+    <p>
+        <a href="https://www.linkedin.com/company/crdfinfo/about/" target="_blank" style="color: #ff7e67; font-weight: bold;">CRDF (learn more)</a> project of designing and developing a 6 DOF robotic required an environment where the simulations could be carried out and tested. It also demanded both hands-on technical implementation and coordination in the team execution with weekly delivery milestones.
+    </p>
+
+    <h4>ACTION</h4>
+    <ul>
+        <li><strong>Technical Implementation:</strong> Architected and configured the ROS environment on Ubuntu, establishing the foundational infrastructure for robotic simulation and control. Implemented kinematic models and control logic in JavaScript to enable full 6-axis arm functionality within the Gazebo physics simulator and RViz visualization framework.</li>
+        <li><strong>Team Leadership:</strong> Co-led the engineering team by defining project scope, aligning requirements across stakeholders, and establishing accountability mechanisms to ensure each team member delivered their contributions on schedule for weekly iterations.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li>Successfully deployed a fully operational 6 DOF robotic arm in simulation with verified kinematics. The team maintained consistent weekly deliverables throughout the project lifecycle, demonstrating effective coordination between technical implementation and team management.</li>
+    </ul>
+
+    <!-- BOTTOM IMAGES (2 Side-by-Side, Corrected) -->
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 2em;">
+        
+    
+        <img src="images/simulation1.jpg" alt="Simulation View" style="width: 40%; height: auto; object-fit: contain; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        
+        <img src="images/simulation2.jpg" alt="Kinematics" style="width: 40%; height: auto; object-fit: contain; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        
+    </div>
+
+    <hr style="margin: 2em 0; border-top: 2px dashed #eee;">
+
+    <div style="text-align:center;">
+        <!-- PDF BUTTON -->
+        <!-- Ensure your file is named 'CRDF_Report.pdf' inside the 'assets' folder -->
+        <a href="assets/robotcrdf.pdf" target="_blank" class="button icon solid fa-file-pdf">Learn more here (View Report)</a>
+        
+        <br><br>
+        
+        <!-- CLOSE BUTTON -->
+        <a href="javascript:void(0)" class="button small" onclick="closeModal('modal-crdf')">Close Project</a>
+    </div>
+  </div>
+</div>
+
+<!-- 5. DrivebuddyAI -->
+<div id="modal-drivebuddy" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-drivebuddy')">&times;</span>
+    
+    <h2>DriveBuddyAI - Intelligent Driver & Fleet Safety Platform</h2>
+    
+    <!-- NO IMAGE (Removed as requested) -->
+
+    <h4>SITUATION</h4>
+    <p>
+        <a href="https://drivebuddyai.co/" target="_blank" style="color: #ff7e67; font-weight: bold;">DriveBuddyAI (learn more)</a>, an AI-powered telematics and fleet safety platform, was constructing and testing various intelligent monitoring solutions for the commercial vehicle fleets. The system, among many other modules, required a pipeline that captured real-time video and storage mechanism for highways and road footage that could seamlessly convert and replay data as continuous video streams, a critical component for collision avoidance training, risk assessment in the transportation domain.
+    </p>
+
+    <h4>ACTION</h4>
+    <ul>
+        <li>Architected and developed an end-to-end camera node pipeline using C++, OpenCV, and ROS (Robot Operating System) solution that captured video streams and efficiently converted them into image snapshots for storage optimization, while enabling automatic reconstruction and playback during re-opening; to support automated driving assistance functionality.</li>
+        <li>Collaborated directly with customers to define scope, align requirements, and document comprehensive use cases.</li>
+        <li>Owned the individual contribution project from development through delivery, working in an agile environment with direct customer reporting and iterative feedback loops.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li>Delivered the pipeline within the planned timeline, enabling real-time video monitoring for fleet safety operations.</li>
+    </ul>
+
+    <div style="text-align:center; margin-top:2em;">
+      <!-- CLOSE BUTTON ONLY -->
+      <a href="javascript:void(0)" class="button small" onclick="closeModal('modal-drivebuddy')">Close Project</a>
+    </div>
+  </div>
+</div>
+<!-- VIT Socials Modal -->
+<div id="modal-vit" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-vit')">&times;</span>
+    
+    <h2>VIT Socials : Prayatnam</h2>
+    
+    <!-- No Image Inside (As requested) -->
+
+    <h4>SITUATION</h4>
+    <p>As a member of the <a href="https://swd.vit.edu/index.php#" target="_blank" style="color: #ff7e67; font-weight: bold;">Social Welfare & Development (SW&D) Committee at VIT (learn more)</a>, I was part of the team preparing to launch "Prayatnam," a flagship educational initiative supporting 30+ differently-abled children at Jeevan Dhara Vidyalaya. Days before the program was scheduled to begin, the designated Team Lead had to withdraw due to a personal emergency. Because other senior members were already fully committed to parallel flagship events like Atmabodh, the project faced an immediate leadership vacuum and the risk of cancellation before it even started.</p>
+    
+    <p>I proactively decided to step up as the primary Team Lead and assumed responsibility for the project’s success, with the immediate goal of building an operational structure to ensure the program launched and was completed on schedule.</p>
+
+    <h4>ACTION</h4>
+    <p>In coordination to the senior members of the committee, I implemented a management framework to organize the 3-month initiative:</p>
+    <ul>
+        <li><strong>Strategic Program Planning:</strong> A detailed master plan that defined daily operations, volunteer responsibilities, and specific time slots to ensure consistent student engagement.</li>
+        <li><strong>Logistics & Resource Management:</strong> Managed all resource allocation and commute logistics for the volunteer team, ensuring safe and timely transportation to the school in Pune.</li>
+        <li><strong>Curriculum Innovation:</strong> Led the team in developing creative teaching methodologies for Math and Science, translating academic topics into interactive, fun lessons tailored for the unique needs of the students.</li>
+        <li><strong>Team Alignment:</strong> Fostered "equality and unity" among the volunteers, core values of the SW&D committee to maintain high morale and professional standards despite the sudden leadership transition.</li>
+    </ul>
+
+    <h4>RESULT</h4>
+    <ul>
+        <li><strong>Successful Program Launch:</strong> Successfully initiated and conducted the 3-month program without delay, directly supporting the social cause of educational development of 30+ students.</li>
+        <li><strong>Stakeholder Satisfaction:</strong> The school faculty and administrators were highly impressed by our team's enthusiasm and the seamless execution of the initiative under my leadership.</li>
+    </ul>
+
+    <div style="text-align:center; margin-top: 2em;">
+        <!-- Close Button Only -->
+        <a href="javascript:void(0)" class="button small" onclick="closeModal('modal-vit')">Close Project</a>
+    </div>
+  </div>
+</div>
+
+
+	</body>
+</html>
