@@ -520,42 +520,35 @@ a:hover { color: #e85d45; }
 #contact p {
     color: rgba(255, 255, 255, 0.7) !important;
 }
-* ==================================================
+/* ==================================================
    CORRECTED MOBILE RESPONSIVENESS FIXES
    ================================================== */
 
 @media screen and (max-width: 1080px) {
 
-    /* 1. CRITICAL: Reset body and main container */
     body {
-        overflow-x: hidden !important; /* Prevent horizontal scroll */
+        overflow-x: hidden !important;
     }
 
     #header {
         transform: none !important;
-        position: static !important; /* CHANGED: from relative to static */
-        left: auto !important;
-        top: auto !important;
-        width: 100vw !important; /* Full viewport width */
-        margin-left: calc(-50vw + 50%) !important; /* Center it properly */
+        position: static !important;
+        width: 100% !important;
         height: auto !important;
-        min-height: 0 !important;
         text-align: center !important;
         background-color: #1e2530 !important;
-        padding: 30px 20px !important; /* REDUCED: from 40px 15px */
+        padding: 20px 15px !important;
         display: block !important;
         z-index: 1000 !important;
-        overflow: visible !important;
-        box-sizing: border-box !important; /* ADDED: critical for sizing */
+        box-sizing: border-box !important;
     }
 
-    /* 2. Profile Picture - Ensure it's visible and properly sized */
     #header .image.avatar64,
     #header .image {
-        display: block !important; /* CHANGED: from inline-block to block */
-        width: 100px !important; /* REDUCED: from 120px */
-        height: 100px !important; /* REDUCED: from 120px */
-        margin: 0 auto 20px auto !important;
+        display: block !important;
+        width: 90px !important;
+        height: 90px !important;
+        margin: 0 auto 15px auto !important;
         opacity: 1 !important;
         border-radius: 50% !important;
     }
@@ -563,73 +556,39 @@ a:hover { color: #e85d45; }
     #header .image img {
         width: 100% !important;
         height: 100% !important;
-        display: block !important;
-        object-fit: cover !important;
         border-radius: 50% !important;
     }
 
-    /* 3. Header text visibility */
-    #header h1, #header p {
-        display: block !important;
-        width: 100% !important;
-        text-align: center !important;
-        color: #fff !important;
-        margin: 0 auto !important;
-        padding: 0 10px !important;
-        box-sizing: border-box !important;
-    }
-
     #header h1 {
-        font-size: 1.5em !important;
-        margin-bottom: 5px !important;
+        font-size: 1.3em !important;
+        margin: 10px 0 5px 0 !important;
+        color: #fff !important;
     }
 
     #header p {
-        font-size: 0.85em !important;
-        margin-bottom: 10px !important;
+        font-size: 0.8em !important;
+        margin: 0 !important;
+        color: #fff !important;
     }
 
-    /* 4. Navigation - Horizontal scrolling buttons */
     #nav {
-        display: block !important;
-        width: 100% !important;
         margin-top: 15px !important;
-        padding: 0 !important;
     }
-    
+
     #nav ul {
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
-        gap: 8px !important;
+        gap: 6px !important;
         padding: 0 !important;
-        list-style: none !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    
-    #nav ul li {
-        display: block !important;
-        margin: 0 !important;
     }
 
     #nav ul li a {
-        display: inline-block !important;
-        background: rgba(255,255,255,0.1) !important;
-        border: 1px solid rgba(255,255,255,0.2) !important;
+        font-size: 0.7em !important;
+        padding: 6px 12px !important;
         border-radius: 50px !important;
-        padding: 8px 14px !important;
-        font-size: 0.75em !important;
-        color: #ffffff !important;
-        white-space: nowrap !important;
     }
 
-    #nav ul li a:hover, #nav ul li a.active {
-        background: rgba(255, 126, 103, 0.3) !important;
-        color: #ff7e67 !important;
-    }
-
-    /* 5. Social Icons */
     #header .bottom {
         margin-top: 15px !important;
     }
@@ -644,44 +603,46 @@ a:hover { color: #e85d45; }
         list-style: none !important;
     }
 
-    /* 6. Main content area */
     #main {
         margin-left: 0 !important;
         width: 100% !important;
-        padding: 0 !important;
         box-sizing: border-box !important;
     }
 
-    /* 7. Hide hamburger menu (not needed with our fix) */
     #headerToggle {
         display: none !important;
     }
-    
-    /* 8. Fix modal on mobile */
-    .modal-content {
-        width: 95% !important;
-        max-width: 100% !important;
-        margin: 20px auto !important;
-        padding: 1.5em !important;
-        min-height: auto !important;
-    }
 
-    /* 9. Section spacing fixes */
     section {
         padding-left: 15px !important;
         padding-right: 15px !important;
         box-sizing: border-box !important;
     }
 
-    /* 10. Experience cards on mobile */
+    .modal-content {
+        width: 95% !important;
+        padding: 1.5em !important;
+    }
+
     .portfolio-role {
         flex-direction: column !important;
-        padding: 1em !important;
     }
 
     .experience-image img {
-        width: 80px !important;
-        height: 80px !important;
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    /* Fix button spacing on intro section */
+    #top footer {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    #top .button {
+        width: 100% !important;
+        margin-left: 0 !important;
     }
 }
     	</style>
@@ -1556,6 +1517,7 @@ a:hover { color: #e85d45; }
 	</body>
 
 </html>
+
 
 
 
