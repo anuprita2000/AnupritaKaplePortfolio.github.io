@@ -520,99 +520,104 @@ a:hover { color: #e85d45; }
 #contact p {
     color: rgba(255, 255, 255, 0.7) !important;
 }
-			/* ==================================================
- /* ==================================================
-   MOBILE RESPONSIVENESS FIXES (UPDATED)
+/* ==================================================
+   MOBILE RESPONSIVENESS FIXES (CORRECTED)
    ================================================== */
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1080px) { /* Increased width to catch all tablets/phones */
 
-    /* 1. RESET LAYOUT: Make the Sidebar a Top Bar */
+    /* 1. RESET HEADER (Force it to stay visible at the top) */
     #header {
-        position: relative !important; 
+        transform: none !important; /* CRITICAL FIX: Stops the sidebar from sliding off-screen */
+        position: relative !important;
         left: auto !important;
         top: auto !important;
         width: 100% !important;
-        height: auto !important;
+        height: auto !important; /* Allows it to grow with content */
+        min-height: 0 !important;
         text-align: center !important;
-        background-color: #1e2530 !important; 
-        padding: 2em 1em !important;
+        background-color: #1e2530 !important;
+        padding: 40px 15px !important;
         display: block !important;
+        z-index: 1000 !important; /* Ensures it stays on top */
         overflow: visible !important;
-        z-index: 10000; /* Ensure it sits on top */
     }
 
     /* 2. FORCE PROFILE PICTURE VISIBILITY */
-    /* The theme hides this by default on mobile, we must force it back */
-    #header .image.avatar48,
-    #header .image.avatar64 {
-        display: inline-block !important;
-        width: 100px !important; /* Set a specific size */
-        height: 100px !important;
+    /* The theme tries to hide '.image' on mobile. We force it back. */
+    #header .image.avatar64,
+    #header .image {
+        display: inline-block !important; 
+        width: 120px !important;
+        height: 120px !important;
         margin: 0 auto 15px auto !important;
+        opacity: 1 !important;
     }
 
     #header .image img {
-        display: block !important;
         width: 100% !important;
         height: 100% !important;
+        display: block !important;
         object-fit: cover;
-        border-radius: 50%;
+        border-radius: 50% !important;
     }
 
-    /* 3. ENSURE TITLE & SUBTITLE ARE VISIBLE */
+    /* 3. ENSURE TEXT IS VISIBLE */
     #header h1, #header p {
         display: block !important;
-        margin: 0.5em 0 !important;
+        width: 100% !important;
+        text-align: center !important;
         color: #fff !important;
     }
 
-    /* 4. FIX NAVIGATION VISIBILITY */
+    /* 4. FIX NAVIGATION (Turn vertical list into buttons) */
     #nav {
         display: block !important;
-        margin-top: 1em;
+        margin-top: 20px !important;
     }
     
     #nav ul {
         display: flex !important;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        padding: 0 !important;
+    }
+    
+    #nav ul li {
+        display: block !important;
+        margin: 0 !important;
     }
 
     #nav ul li a {
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 50px;
-        padding: 0.5em 1.2em !important;
-        font-size: 0.8em;
-        background: rgba(0,0,0,0.2);
+        display: block !important;
+        background: rgba(255,255,255,0.1) !important;
+        border: 1px solid rgba(255,255,255,0.2) !important;
+        border-radius: 50px !important;
+        padding: 8px 16px !important;
+        font-size: 0.85em !important;
+        color: #ffffff !important;
     }
 
-    /* 5. RESET MAIN CONTENT MARGIN */
-    /* Removes the empty space on the left where the sidebar used to be */
+    /* 5. RESET MAIN CONTENT */
+    /* Remove the left margin so the content uses the full screen width */
     #main {
-        margin-left: 0 !important; 
+        margin-left: 0 !important;
         width: 100% !important;
+        padding-top: 0 !important;
     }
 
-    /* 6. MODAL & BUTTON FIXES FOR MOBILE */
+    /* 6. HIDE THE DEFAULT HAMBURGER MENU BUTTON */
+    /* The theme creates a toggle button. We don't need it since the header is always visible now. */
+    #headerToggle {
+        display: none !important;
+    }
+    
+    /* 7. FIX MODAL WIDTH ON MOBILE */
     .modal-content {
-        width: 95% !important;
-        margin: 5vh auto !important;
+        width: 90% !important;
+        margin: 10% auto !important;
         padding: 1.5em !important;
-    }
-
-    #top footer {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-    }
-
-    #top footer .button {
-        width: 100% !important;
-        max-width: 300px;
-        margin: 0 !important;
     }
 }
     	</style>
@@ -1487,4 +1492,5 @@ a:hover { color: #e85d45; }
 	</body>
 
 </html>
+
 
