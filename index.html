@@ -521,41 +521,60 @@ a:hover { color: #e85d45; }
     color: rgba(255, 255, 255, 0.7) !important;
 }
 			/* ==================================================
-   MOBILE RESPONSIVENESS FIXES (Paste at very bottom)
+ /* ==================================================
+   MOBILE RESPONSIVENESS FIXES (UPDATED)
    ================================================== */
 
-/* Only apply these rules on screens smaller than 980px (Tablets & Phones) */
 @media screen and (max-width: 980px) {
 
-    /* 1. FIX THE INDEX/SIDEBAR VISIBILITY */
-    /* Forces the sidebar to become a visible top-bar on mobile */
+    /* 1. RESET LAYOUT: Make the Sidebar a Top Bar */
     #header {
         position: relative !important; 
-        left: 0 !important;
-        top: 0 !important;
+        left: auto !important;
+        top: auto !important;
         width: 100% !important;
         height: auto !important;
         text-align: center !important;
-        background-color: #1e2530 !important; /* Ensures background is visible */
+        background-color: #1e2530 !important; 
         padding: 2em 1em !important;
         display: block !important;
+        overflow: visible !important;
+        z-index: 10000; /* Ensure it sits on top */
     }
 
-    /* Ensure the logo/avatar part is visible */
-    #header .top {
-        height: auto !important;
-        position: static !important;
-        padding-bottom: 0 !important;
+    /* 2. FORCE PROFILE PICTURE VISIBILITY */
+    /* The theme hides this by default on mobile, we must force it back */
+    #header .image.avatar48,
+    #header .image.avatar64 {
+        display: inline-block !important;
+        width: 100px !important; /* Set a specific size */
+        height: 100px !important;
+        margin: 0 auto 15px auto !important;
     }
 
-    /* Ensure the Navigation links are visible */
+    #header .image img {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    /* 3. ENSURE TITLE & SUBTITLE ARE VISIBLE */
+    #header h1, #header p {
+        display: block !important;
+        margin: 0.5em 0 !important;
+        color: #fff !important;
+    }
+
+    /* 4. FIX NAVIGATION VISIBILITY */
     #nav {
         display: block !important;
         margin-top: 1em;
     }
     
     #nav ul {
-        display: flex;
+        display: flex !important;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
@@ -563,25 +582,37 @@ a:hover { color: #e85d45; }
 
     #nav ul li a {
         border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 5px;
-        padding: 0.5em 1em !important;
+        border-radius: 50px;
+        padding: 0.5em 1.2em !important;
+        font-size: 0.8em;
+        background: rgba(0,0,0,0.2);
     }
 
-    /* 2. FIX THE MERGING BUTTONS */
-    /* Forces buttons to stack vertically instead of squishing */
+    /* 5. RESET MAIN CONTENT MARGIN */
+    /* Removes the empty space on the left where the sidebar used to be */
+    #main {
+        margin-left: 0 !important; 
+        width: 100% !important;
+    }
+
+    /* 6. MODAL & BUTTON FIXES FOR MOBILE */
+    .modal-content {
+        width: 95% !important;
+        margin: 5vh auto !important;
+        padding: 1.5em !important;
+    }
+
     #top footer {
         display: flex !important;
-        flex-direction: column !important; /* Stack top-to-bottom */
+        flex-direction: column !important;
         align-items: center !important;
-        gap: 20px !important; /* Space between the two buttons */
+        gap: 15px !important;
     }
 
-    /* Remove the left-margin we added for desktop */
     #top footer .button {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 80% !important; /* Make buttons wide and easy to tap */
+        width: 100% !important;
         max-width: 300px;
+        margin: 0 !important;
     }
 }
     	</style>
@@ -686,6 +717,7 @@ a:hover { color: #e85d45; }
         <span class="company-badge">FORVIA</span>
         <h3>Forvia : Design & Development Engineer</h3>
         <p class="sar-block">
+			<strong>Pune, India<br>
             
         </p>
       </div>
@@ -698,6 +730,7 @@ a:hover { color: #e85d45; }
         <span class="company-badge lt">L&T (Larsen & Toubro)</span>
         <h3>L&T Heavy Engineering : Program Planning & Execution Intern</h3>
         <p class="sar-block">
+			<strong>Surat, India<br>
             
         </p>
       </div>
@@ -1454,3 +1487,4 @@ a:hover { color: #e85d45; }
 	</body>
 
 </html>
+
