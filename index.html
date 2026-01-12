@@ -520,68 +520,92 @@ a:hover { color: #e85d45; }
 #contact p {
     color: rgba(255, 255, 255, 0.7) !important;
 }
-/* ==================================================
-   MOBILE RESPONSIVENESS FIXES (CORRECTED)
+* ==================================================
+   CORRECTED MOBILE RESPONSIVENESS FIXES
    ================================================== */
 
-@media screen and (max-width: 1080px) { /* Increased width to catch all tablets/phones */
+@media screen and (max-width: 1080px) {
 
-    /* 1. RESET HEADER (Force it to stay visible at the top) */
+    /* 1. CRITICAL: Reset body and main container */
+    body {
+        overflow-x: hidden !important; /* Prevent horizontal scroll */
+    }
+
     #header {
-        transform: none !important; /* CRITICAL FIX: Stops the sidebar from sliding off-screen */
-        position: relative !important;
+        transform: none !important;
+        position: static !important; /* CHANGED: from relative to static */
         left: auto !important;
         top: auto !important;
-        width: 100% !important;
-        height: auto !important; /* Allows it to grow with content */
+        width: 100vw !important; /* Full viewport width */
+        margin-left: calc(-50vw + 50%) !important; /* Center it properly */
+        height: auto !important;
         min-height: 0 !important;
         text-align: center !important;
         background-color: #1e2530 !important;
-        padding: 40px 15px !important;
+        padding: 30px 20px !important; /* REDUCED: from 40px 15px */
         display: block !important;
-        z-index: 1000 !important; /* Ensures it stays on top */
+        z-index: 1000 !important;
         overflow: visible !important;
+        box-sizing: border-box !important; /* ADDED: critical for sizing */
     }
 
-    /* 2. FORCE PROFILE PICTURE VISIBILITY */
-    /* The theme tries to hide '.image' on mobile. We force it back. */
+    /* 2. Profile Picture - Ensure it's visible and properly sized */
     #header .image.avatar64,
     #header .image {
-        display: inline-block !important; 
-        width: 120px !important;
-        height: 120px !important;
-        margin: 0 auto 15px auto !important;
+        display: block !important; /* CHANGED: from inline-block to block */
+        width: 100px !important; /* REDUCED: from 120px */
+        height: 100px !important; /* REDUCED: from 120px */
+        margin: 0 auto 20px auto !important;
         opacity: 1 !important;
+        border-radius: 50% !important;
     }
 
     #header .image img {
         width: 100% !important;
         height: 100% !important;
         display: block !important;
-        object-fit: cover;
+        object-fit: cover !important;
         border-radius: 50% !important;
     }
 
-    /* 3. ENSURE TEXT IS VISIBLE */
+    /* 3. Header text visibility */
     #header h1, #header p {
         display: block !important;
         width: 100% !important;
         text-align: center !important;
         color: #fff !important;
+        margin: 0 auto !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
     }
 
-    /* 4. FIX NAVIGATION (Turn vertical list into buttons) */
+    #header h1 {
+        font-size: 1.5em !important;
+        margin-bottom: 5px !important;
+    }
+
+    #header p {
+        font-size: 0.85em !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* 4. Navigation - Horizontal scrolling buttons */
     #nav {
         display: block !important;
-        margin-top: 20px !important;
+        width: 100% !important;
+        margin-top: 15px !important;
+        padding: 0 !important;
     }
     
     #nav ul {
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
-        gap: 10px !important;
+        gap: 8px !important;
         padding: 0 !important;
+        list-style: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     #nav ul li {
@@ -590,34 +614,74 @@ a:hover { color: #e85d45; }
     }
 
     #nav ul li a {
-        display: block !important;
+        display: inline-block !important;
         background: rgba(255,255,255,0.1) !important;
         border: 1px solid rgba(255,255,255,0.2) !important;
         border-radius: 50px !important;
-        padding: 8px 16px !important;
-        font-size: 0.85em !important;
+        padding: 8px 14px !important;
+        font-size: 0.75em !important;
         color: #ffffff !important;
+        white-space: nowrap !important;
     }
 
-    /* 5. RESET MAIN CONTENT */
-    /* Remove the left margin so the content uses the full screen width */
+    #nav ul li a:hover, #nav ul li a.active {
+        background: rgba(255, 126, 103, 0.3) !important;
+        color: #ff7e67 !important;
+    }
+
+    /* 5. Social Icons */
+    #header .bottom {
+        margin-top: 15px !important;
+    }
+
+    .icons {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 15px !important;
+    }
+
+    .icons li {
+        list-style: none !important;
+    }
+
+    /* 6. Main content area */
     #main {
         margin-left: 0 !important;
         width: 100% !important;
-        padding-top: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
     }
 
-    /* 6. HIDE THE DEFAULT HAMBURGER MENU BUTTON */
-    /* The theme creates a toggle button. We don't need it since the header is always visible now. */
+    /* 7. Hide hamburger menu (not needed with our fix) */
     #headerToggle {
         display: none !important;
     }
     
-    /* 7. FIX MODAL WIDTH ON MOBILE */
+    /* 8. Fix modal on mobile */
     .modal-content {
-        width: 90% !important;
-        margin: 10% auto !important;
+        width: 95% !important;
+        max-width: 100% !important;
+        margin: 20px auto !important;
         padding: 1.5em !important;
+        min-height: auto !important;
+    }
+
+    /* 9. Section spacing fixes */
+    section {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 10. Experience cards on mobile */
+    .portfolio-role {
+        flex-direction: column !important;
+        padding: 1em !important;
+    }
+
+    .experience-image img {
+        width: 80px !important;
+        height: 80px !important;
     }
 }
     	</style>
@@ -1492,5 +1556,6 @@ a:hover { color: #e85d45; }
 	</body>
 
 </html>
+
 
 
