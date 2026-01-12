@@ -520,6 +520,70 @@ a:hover { color: #e85d45; }
 #contact p {
     color: rgba(255, 255, 255, 0.7) !important;
 }
+			/* ==================================================
+   MOBILE RESPONSIVENESS FIXES (Paste at very bottom)
+   ================================================== */
+
+/* Only apply these rules on screens smaller than 980px (Tablets & Phones) */
+@media screen and (max-width: 980px) {
+
+    /* 1. FIX THE INDEX/SIDEBAR VISIBILITY */
+    /* Forces the sidebar to become a visible top-bar on mobile */
+    #header {
+        position: relative !important; 
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        text-align: center !important;
+        background-color: #1e2530 !important; /* Ensures background is visible */
+        padding: 2em 1em !important;
+        display: block !important;
+    }
+
+    /* Ensure the logo/avatar part is visible */
+    #header .top {
+        height: auto !important;
+        position: static !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Ensure the Navigation links are visible */
+    #nav {
+        display: block !important;
+        margin-top: 1em;
+    }
+    
+    #nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #nav ul li a {
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 5px;
+        padding: 0.5em 1em !important;
+    }
+
+    /* 2. FIX THE MERGING BUTTONS */
+    /* Forces buttons to stack vertically instead of squishing */
+    #top footer {
+        display: flex !important;
+        flex-direction: column !important; /* Stack top-to-bottom */
+        align-items: center !important;
+        gap: 20px !important; /* Space between the two buttons */
+    }
+
+    /* Remove the left-margin we added for desktop */
+    #top footer .button {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 80% !important; /* Make buttons wide and easy to tap */
+        max-width: 300px;
+    }
+}
     	</style>
 	</head>
 
@@ -1388,4 +1452,5 @@ a:hover { color: #e85d45; }
 
 
 	</body>
+
 </html>
